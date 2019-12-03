@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  
+  p Welcome to #{title}
+  form(name"create-call", method="post", action="/callback")
+    select(name="Worker")
+      for item in workers
+        option #{item}
+    input(type="text" name="To")
+    input(type="submit", value="add")
